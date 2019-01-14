@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MinHow,MinHow's Blog">
+  
+  <meta name="description" content="title: NumPy学习笔记 tags:  -Python -数据科学 categories: 实用技术 author: 王不俊cover_picture:https://timgsa.baidu.com/timgimage&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1547480500930&amp;amp;di=f72aed06e8883a69ac6">
+<meta name="keywords" content="������,mdiligent,IT,С��,halo">
+<meta property="og:type" content="article">
+<meta property="og:title">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/NumPy学习笔记/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="title: NumPy学习笔记 tags:  -Python -数据科学 categories: 实用技术 author: 王不俊cover_picture:https://timgsa.baidu.com/timgimage&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1547480500930&amp;amp;di=f72aed06e8883a69ac6">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190114205440520.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-01-14T12:58:38.606Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title">
+<meta name="twitter:description" content="title: NumPy学习笔记 tags:  -Python -数据科学 categories: 实用技术 author: 王不俊cover_picture:https://timgsa.baidu.com/timgimage&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1547480500930&amp;amp;di=f72aed06e8883a69ac6">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190114205440520.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王不俊的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王不俊的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个啥都不会还妄想努力学习的菜鸟
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="王不俊" target="_blank" href="//mdiligent.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/mdiligent">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-NumPy学习笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <hr>
+<p>title: NumPy学习笔记</p>
+<p>tags: </p>
+<p>-Python</p>
+<p>-数据科学</p>
+<p>categories: 实用技术</p>
+<p>author: 王不俊<br>cover_picture:<a href="https://timgsa.baidu.com/timgimage&amp;quality=80&amp;size=b9999_10000&amp;sec=1547480500930&amp;di=f72aed06e8883a69ac646236004360fa&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201406%2F15%2F20140615000935_NLdvL.thumb.700_0.jpeg" target="_blank" rel="noopener">https://timgsa.baidu.com/timgimage&amp;quality=80&amp;size=b9999_10000&amp;sec=1547480500930&amp;di=f72aed06e8883a69ac646236004360fa&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201406%2F15%2F20140615000935_NLdvL.thumb.700_0.jpeg</a></p>
+<hr>
+<p><img src="https://img-blog.csdnimg.cn/20190114205440520.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>   学习NumPy库，把一些重要的或者难的用法记录下来，方便复习。</p>
+<ol>
+<li>从数值范围创建数组</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.arange(start, stop, step, dtype)#参数分别为起始值，终止值，步长和数据类型</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建等间隔一维数组</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)#参数分别为起始值，终止值，数据数，是否包含stop值，是否显示间距和数据类型</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在这里插入代码片</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>使用数字 0 将一个全为 1 的 5x5 二维数组包围</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Z = np.ones((5,5))</span><br><span class="line">Z = np.pad(Z, pad_width=1, mode=&apos;constant&apos;, constant_values=0)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个 5x5 的二维数组，并设置值 1, 2, 3, 4 落在其对角线下方<code>Z = np.diag(1+np.arange(4),k=-1)</code></p>
+</li>
+<li><p>创建一个 10x10 的二维数组，并使得 1 和 0 沿对角线间隔放置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Z = np.zeros((10,10),dtype=int)</span><br><span class="line">Z[1::2,::2] = 1</span><br><span class="line">Z[::2,1::2] = 1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个 0-10 的一维数组，并将 (1, 9] 之间的数全部反转成负数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Z = np.arange(11)</span><br><span class="line">Z[(1 &lt; Z) &amp; (Z &lt;= 9)] *= -1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找出两个一维数组中相同的元素</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Z1 = np.random.randint(0,10,10)</span><br><span class="line">Z2 = np.random.randint(0,10,10)</span><br><span class="line">print(&quot;Z1:&quot;, Z1)</span><br><span class="line">print(&quot;Z2:&quot;, Z2)</span><br><span class="line">np.intersect1d(Z1,Z2)</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>统计数组各行的算术平均值</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.mean(a, axis=1)</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>统计数组各列的加权平均值</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.average(a, axis=0)</span><br></pre></td></tr></table></figure>
+<p>10.统计中位数，方差，标准差等。<br>11.沿横 / 纵轴分割数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.hsplit(a, 3)</span><br><span class="line">np.vsplit(a, 3)</span><br></pre></td></tr></table></figure>
+<p>12.返回每列最大值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.max(a, axis=0) #行最大值axis = 1</span><br></pre></td></tr></table></figure>
+<ol start="13">
+<li>返回每列最大值索引</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.argmax(a, axis=0) #最小值是argmin函数</span><br></pre></td></tr></table></figure>
+<p>14.找出两个一维数组中相同的元素<br><code>np.intersect1d(Z1,Z2)</code><br>15.使用 NumPy 打印昨天、今天、明天的日期</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yesterday = np.datetime64(&apos;today&apos;, &apos;D&apos;) - np.timedelta64(1, &apos;D&apos;)</span><br><span class="line">today     = np.datetime64(&apos;today&apos;, &apos;D&apos;)</span><br><span class="line">tomorrow  = np.datetime64(&apos;today&apos;, &apos;D&apos;) + np.timedelta64(1, &apos;D&apos;)</span><br><span class="line">print(&quot;yesterday: &quot;, yesterday)</span><br><span class="line">print(&quot;today: &quot;, today)</span><br><span class="line">print(&quot;tomorrow: &quot;, tomorrow)</span><br></pre></td></tr></table></figure>
+<p>16.数组排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Z.sort()#升序排序</span><br><span class="line">Z.sort(axis=0)#列升序</span><br></pre></td></tr></table></figure>
+<p>17.将 float32 转换为整型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Z = np.arange(10, dtype=np.float32)</span><br><span class="line">Z = Z.astype(np.int32, copy=False)</span><br></pre></td></tr></table></figure>
+<p>18.将随机二维数组按照第 3 列从上到下进行升序排列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Z = np.random.randint(0,10,(5,5))#生成一个5行5列数值在0~10之间的数组</span><br><span class="line">Z[Z[:,2].argsort()]</span><br></pre></td></tr></table></figure>
+<p>19.交换前两行可以直接这样吗?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[[0,1]] = A[[1,0]]</span><br></pre></td></tr></table></figure></p>
+<p>20.找出随机一维数组Z中出现频率最高的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.bincount(Z).argmax()</span><br></pre></td></tr></table></figure></p>
+<p>21.统计随机数组中的各元素的数量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Z = np.random.randint(0,100,25).reshape(5,5)</span><br><span class="line">np.unique(Z, return_counts=True) # 返回值中，第 2 个数组对应第 1 个数组元素的数量</span><br></pre></td></tr></table></figure>
+<p>22.将多个 1 维数组拼合为单个 Ndarray<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Z = np.array([Z1, Z2, Z3])</span><br><span class="line">np.concatenate(Z)</span><br></pre></td></tr></table></figure></p>
+<p>23.使用 NumPy 计算变量直接的相关性系数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Z = np.array([</span><br><span class="line">    [1, 2, 1, 9, 10, 3, 2, 6, 7], # 特征 A</span><br><span class="line">    [2, 1, 8, 3, 7, 5, 10, 7, 2], # 特征 B</span><br><span class="line">    [2, 1, 1, 8, 9, 4, 3, 5, 7]]) # 特征 C</span><br><span class="line">np.corrcoef(Z)</span><br></pre></td></tr></table></figure></p>
+<p>24.使用 NumPy 计算矩阵的特征值和特征向量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">M = np.matrix([[1,2,3], [4,5,6], [7,8,9]])</span><br><span class="line">w, v = np.linalg.eig(M)</span><br><span class="line"># w 对应特征值，v 对应特征向量</span><br></pre></td></tr></table></figure>
+<p>25.打印九九乘法表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.fromfunction(lambda i, j: (i + 1) * (j + 1), (9, 9))</span><br></pre></td></tr></table></figure>
+<p>26.使用 Numpy 将实验楼 LOGO 转换为 Ndarray 数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from io import BytesIO</span><br><span class="line">from PIL import Image</span><br><span class="line">import PIL, requests</span><br><span class="line"></span><br><span class="line"># 通过链接下载图像</span><br><span class="line">URL = &apos;https://static.shiyanlou.com/img/logo-black.png&apos;</span><br><span class="line">response = requests.get(URL)</span><br><span class="line"></span><br><span class="line"># 将内容读取为图像</span><br><span class="line">I = Image.open(BytesIO(response.content))</span><br><span class="line"></span><br><span class="line"># 将图像转换为 Ndarray</span><br><span class="line">shiyanlou = np.asarray(I)</span><br><span class="line">shiyanlou</span><br><span class="line"># 将转换后的 Ndarray 重新绘制成图像</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line">%matplotlib inline</span><br><span class="line">plt.imshow(shiyanlou)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>27.几个常用的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">flat #返回</span><br><span class="line"></span><br><span class="line">np.nonzero([1,0,2,0,1,0,4,0])#返回一维数组中非 0 元素的位置索引</span><br><span class="line"></span><br><span class="line">np.dot(A, B)#矩阵相乘</span><br><span class="line"></span><br><span class="line">np.power(x,4)#对x数组的每个值4次方</span><br><span class="line"></span><br><span class="line">np.set_printoptions(precision=2)#对于二维随机数组中各元素，保留其 2 位小数</span><br><span class="line"></span><br><span class="line">Z/1e3#科学记数法输出 NumPy（Z） 数组</span><br><span class="line"></span><br><span class="line">a.argsort()#打印各元素在数组中升序排列的索引</span><br><span class="line"></span><br><span class="line">a.real #属性，数组a的实部</span><br><span class="line">a.imag #属性，数组a的虚部</span><br><span class="line"></span><br><span class="line">numpy.linalg.inv()# 函数计算矩阵的乘法逆矩阵。</span><br><span class="line"></span><br><span class="line">numpy.linalg.solve() #函数给出了矩阵形式的线性方程的解。</span><br><span class="line"></span><br><span class="line">umpy.matlib.eye() #函数返回一个矩阵，对角线元素为 1，其他位置为零。</span><br><span class="line"></span><br><span class="line">np.c_[M1, M2]#按列连接两个数组</span><br><span class="line">np.r_[M1, M2]#按行连接两个数组</span><br></pre></td></tr></table></figure></p>
+<p>参考：<br><a href="https://www.shiyanlou.com/courses/1090" target="_blank" rel="noopener">实验楼NumPy 百题大冲关</a><br><a href="http://www.runoob.com/numpy/numpy-tutorial.html" target="_blank" rel="noopener">NumPy教程</a></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月14日 20:58</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/14/NumPy学习笔记/" title="">http://yoursite.com/2019/01/14/NumPy学习笔记/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="Halo Wong">
+                Halo Wong
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/14/NumPy学习笔记/&title=&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/14/NumPy学习笔记/&title=&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/01/14/NumPy学习笔记/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com/2019/01/14/NumPy学习笔记/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/01/14/NumPy学习笔记/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/01/14/NumPy学习笔记/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/14/用hexo在github上搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">用Hexo在github上搭建个人博客</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Halo Wong<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/实用技术/">实用技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
