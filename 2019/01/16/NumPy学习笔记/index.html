@@ -3,24 +3,24 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title></title>
+  <title>NumPy学习笔记 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="MinHow,MinHow's Blog">
   
-  <meta name="description" content="title: NumPy学习笔记 tags:   Python  数据科学   categories: 实用技术 author: 王不俊 cover_picture: https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1547480500930&amp;amp;di=f72aed06e8883a">
-<meta name="keywords" content="������,mdiligent,IT,С��,halo">
+  <meta name="description" content="学习NumPy库，把一些重要的或者难的用法记录下来，方便复习。1.从数值范围创建数组 1numpy.arange(start, stop, step, dtype)#参数分别为起始值，终止值，步长和数据类型 2.创建等间隔一维数组 1np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)#参数分别为">
+<meta name="keywords" content="Python,数据科学">
 <meta property="og:type" content="article">
-<meta property="og:title">
+<meta property="og:title" content="NumPy学习笔记">
 <meta property="og:url" content="http://yoursite.com/2019/01/16/NumPy学习笔记/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="title: NumPy学习笔记 tags:   Python  数据科学   categories: 实用技术 author: 王不俊 cover_picture: https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1547480500930&amp;amp;di=f72aed06e8883a">
+<meta property="og:description" content="学习NumPy库，把一些重要的或者难的用法记录下来，方便复习。1.从数值范围创建数组 1numpy.arange(start, stop, step, dtype)#参数分别为起始值，终止值，步长和数据类型 2.创建等间隔一维数组 1np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)#参数分别为">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190114205440520.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-01-16T10:23:07.491Z">
+<meta property="og:updated_time" content="2019-01-16T10:31:18.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title">
-<meta name="twitter:description" content="title: NumPy学习笔记 tags:   Python  数据科学   categories: 实用技术 author: 王不俊 cover_picture: https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1547480500930&amp;amp;di=f72aed06e8883a">
+<meta name="twitter:title" content="NumPy学习笔记">
+<meta name="twitter:description" content="学习NumPy库，把一些重要的或者难的用法记录下来，方便复习。1.从数值范围创建数组 1numpy.arange(start, stop, step, dtype)#参数分别为起始值，终止值，步长和数据类型 2.创建等间隔一维数组 1np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)#参数分别为">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190114205440520.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70">
   
   
@@ -115,21 +115,40 @@
         <section id="main" class="body-wrap"><article id="post-NumPy学习笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      NumPy学习笔记
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/实用技术/">实用技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-16
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <hr>
-<p>title: NumPy学习笔记</p>
-<p>tags: </p>
-<ul>
-<li><p>Python</p>
-</li>
-<li><p>数据科学</p>
-</li>
-</ul>
-<p>categories: 实用技术</p>
-<p>author: 王不俊</p>
-<h2 id="cover-picture-https-timgsa-baidu-com-timg-image-amp-quality-80-amp-size-b9999-10000-amp-sec-1547480500930-amp-di-f72aed06e8883a69ac646236004360fa-amp-imgtype-0-amp-src-http-3A-2F-2Fimg4-duitang-com-2Fuploads-2Fitem-2F201406-2F15-2F20140615000935-NLdvL-thumb-700-0-jpeg"><a href="#cover-picture-https-timgsa-baidu-com-timg-image-amp-quality-80-amp-size-b9999-10000-amp-sec-1547480500930-amp-di-f72aed06e8883a69ac646236004360fa-amp-imgtype-0-amp-src-http-3A-2F-2Fimg4-duitang-com-2Fuploads-2Fitem-2F201406-2F15-2F20140615000935-NLdvL-thumb-700-0-jpeg" class="headerlink" title="cover_picture: https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1547480500930&amp;di=f72aed06e8883a69ac646236004360fa&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201406%2F15%2F20140615000935_NLdvL.thumb.700_0.jpeg"></a>cover_picture: <a href="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1547480500930&amp;di=f72aed06e8883a69ac646236004360fa&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201406%2F15%2F20140615000935_NLdvL.thumb.700_0.jpeg" target="_blank" rel="noopener">https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1547480500930&amp;di=f72aed06e8883a69ac646236004360fa&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201406%2F15%2F20140615000935_NLdvL.thumb.700_0.jpeg</a></h2><p><img src="https://img-blog.csdnimg.cn/20190114205440520.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>   学习NumPy库，把一些重要的或者难的用法记录下来，方便复习。<br>1.从数值范围创建数组</p>
+            <p><img src="https://img-blog.csdnimg.cn/20190114205440520.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>   学习NumPy库，把一些重要的或者难的用法记录下来，方便复习。<br>1.从数值范围创建数组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.arange(start, stop, step, dtype)#参数分别为起始值，终止值，步长和数据类型</span><br></pre></td></tr></table></figure>
 <p>2.创建等间隔一维数组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)#参数分别为起始值，终止值，数据数，是否包含stop值，是否显示间距和数据类型</span><br></pre></td></tr></table></figure>
@@ -204,8 +223,8 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年01月16日 18:23</p>
-        <p>原始链接： <a class="post-url" href="/2019/01/16/NumPy学习笔记/" title="">http://yoursite.com/2019/01/16/NumPy学习笔记/</a></p>
+        <p>最后更新： 2019年01月16日 18:31</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/16/NumPy学习笔记/" title="NumPy学习笔记">http://yoursite.com/2019/01/16/NumPy学习笔记/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="Halo Wong">
@@ -262,7 +281,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/16/NumPy学习笔记/&title=&pic=http://yoursite.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/16/NumPy学习笔记/&title=《NumPy学习笔记》 — null&pic=https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547480500930&di=f72aed06e8883a69ac646236004360fa&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201406%2F15%2F20140615000935_NLdvL.thumb.700_0.jpeg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -272,7 +291,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/16/NumPy学习笔记/&title=&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/16/NumPy学习笔记/&title=《NumPy学习笔记》 — null&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -282,7 +301,7 @@
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com/2019/01/16/NumPy学习笔记/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NumPy学习笔记》 — null&url=http://yoursite.com/2019/01/16/NumPy学习笔记/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -306,6 +325,15 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Python/" class="color2">Python</a>
+      
+    <a href="/tags/数据科学/" class="color5">数据科学</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -313,12 +341,6 @@
 </article>
 
 
-    <aside class="post-toc-pos post-toc-top" id="post-toc">
-        <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cover-picture-https-timgsa-baidu-com-timg-image-amp-quality-80-amp-size-b9999-10000-amp-sec-1547480500930-amp-di-f72aed06e8883a69ac646236004360fa-amp-imgtype-0-amp-src-http-3A-2F-2Fimg4-duitang-com-2Fuploads-2Fitem-2F201406-2F15-2F20140615000935-NLdvL-thumb-700-0-jpeg"><span class="post-toc-text">cover_picture: https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1547480500930&amp;di=f72aed06e8883a69ac646236004360fa&amp;imgtype=0&amp;src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201406%2F15%2F20140615000935_NLdvL.thumb.700_0.jpeg</span></a></li></ol>
-        </nav>
-    </aside>
-    
 
 <nav id="article-nav">
   
@@ -389,7 +411,7 @@
             <a class="category-link" href="/categories/实用技术/">实用技术</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a>
+            <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -422,7 +444,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a>
+            <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/数据科学/" style="font-size: 10px;">数据科学</a>
         </div>
     </div>
 </div>
