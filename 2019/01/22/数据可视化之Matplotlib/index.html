@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>数据可视化之Matplotlib | </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MinHow,MinHow's Blog">
+  
+  <meta name="description" content="基础知识 pyplot是Matplotlib 软件包中子包，提供了一个类似MATLAB的绘图框架。导入  1import matplotlib.pyplot as plt figure图像123456789matplotlib.pyplot.figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameo">
+<meta name="keywords" content="Python,数据科学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据可视化之Matplotlib">
+<meta property="og:url" content="http://yoursite.com/2019/01/22/数据可视化之Matplotlib/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="基础知识 pyplot是Matplotlib 软件包中子包，提供了一个类似MATLAB的绘图框架。导入  1import matplotlib.pyplot as plt figure图像123456789matplotlib.pyplot.figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameo">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-22T13:33:11.988Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据可视化之Matplotlib">
+<meta name="twitter:description" content="基础知识 pyplot是Matplotlib 软件包中子包，提供了一个类似MATLAB的绘图框架。导入  1import matplotlib.pyplot as plt figure图像123456789matplotlib.pyplot.figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameo">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">王不俊的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        王不俊的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个啥都不会还妄想努力学习的菜鸟
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="王不俊" target="_blank" href="//mdiligent.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/mdiligent">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-数据可视化之Matplotlib" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      数据可视化之Matplotlib
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/实用技术/">实用技术</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
+<li>pyplot是Matplotlib 软件包中子包，提供了一个类似MATLAB的绘图框架。导入</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br></pre></td></tr></table></figure>
+<p>figure图像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">matplotlib.pyplot.figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameon=True, FigureClass=&lt;class &apos;matplotlib.figure.Figure&apos;&gt;, clear=False, **kwargs)</span><br><span class="line"># num 图像标号</span><br><span class="line">#  figsize ： 整数元组，可选，默认值：无，宽度，高度（英寸）。</span><br><span class="line">#  dpi ： 整数，可选，默认值：无，这个数字的分辨率</span><br><span class="line">#  facecolor：背景颜色。</span><br><span class="line">#   edgecolor：边框颜色。</span><br><span class="line">#   frameon ： bool，optional，默认值：True，如果为False，则禁止绘制图框。</span><br><span class="line">#   FigureClass ：的 子类Figure（可选）使用自定义Figure实例。</span><br><span class="line">#   clear ： bool，可选，默认值：False，如果为True并且该图已经存在，那么它将被清除。</span><br></pre></td></tr></table></figure></p>
+<p>绘图函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(x，y，fmt,scalex = True，scaley = True，data = None，** kwargs ）</span><br><span class="line">#  x,y 数据点的水平/垂直坐标</span><br><span class="line">#   fmt = &apos;[color][marker][line]&apos;颜色、标记和线条样式</span><br><span class="line">#   scalex，scaley 默认值：True，这些参数确定视图限制是否适合数据限制。值将传递给autoscale_view。</span><br></pre></td></tr></table></figure>
+<p>绘制多个图可以两次调用plot函数或者在函数里传入多组参数。<br>注意：如果为plot（）命令提供单个列表或数组，则matplotlib假定它是一系列y值，并自动为您生成x值。由于python范围以0开头，因此默认的x向量与y的长度相同，但以0开头。</p>
+<p>使用Line2D属性作为关键字参数来更好地控制外观。行属性和fmt可以混合使用。以下两个调用产生相同的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; plot(x, y, &apos;go--&apos;, linewidth=2, markersize=12)</span><br><span class="line">&gt;&gt;&gt; plot(x, y, color=&apos;green&apos;, marker=&apos;o&apos;, linestyle=&apos;dashed&apos;,</span><br><span class="line">...      linewidth=2, markersize=12)</span><br></pre></td></tr></table></figure></p>
+<p>设置坐标轴</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plt.xlim((-1, 2))   #设置x坐标轴范围</span><br><span class="line">plt.ylim((-2, 3))   #设置y坐标轴范围</span><br><span class="line">plt.xlabel(&apos;I am x&apos;)#设置x坐标轴名称</span><br><span class="line">plt.ylabel(&apos;I am y&apos;)#设置x坐标轴名称</span><br><span class="line">plt.xticks()        #设置x轴刻度，无参则不显示x轴</span><br><span class="line">plt.yticks          #设置y轴刻度以及名称</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用plt.gca获取当前坐标轴信息. 使用.spines设置边框：右侧边框；使用.set_color设置边框颜色：默认白色； 使用.spines设置边框：上边框；使用.set_color设置边框颜色：默认白色；</li>
+<li>使用.xaxis.set_ticks_position设置x坐标刻度数字或名称的位置：bottom.（所有位置：top，bottom，both，default，none）</li>
+<li>ax.xaxis.set_ticks_position(‘bottom’)<br>使用.spines设置边框：x轴；使用.set_position设置边框位置：y=0的位置；（位置所有属性：outward，axes，data）<br>（y轴类似）</li>
+<li>图例</li>
+</ul>
+<p>首先对图中的两条线绘制图例，设置两条线的类型等信息，用变量 l1 和 l2 分别存储起来. 而且需要注意的是 l1, l2,要以逗号结尾, 因为plt.plot() 返回的是一个列表。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">l1, = plt.plot(x, y1, label=&apos;linear line&apos;)</span><br><span class="line">l2, = plt.plot(x, y2, color=&apos;red&apos;, linewidth=1.0, linestyle=&apos;--&apos;, label=&apos;square line&apos;)</span><br><span class="line">plt.legend(handles=[l1, l2], labels=[&apos;up&apos;, &apos;down&apos;],  loc=&apos;best&apos;)</span><br><span class="line"># handles线，依次对应labels的名称</span><br><span class="line"># labels 图例名称</span><br><span class="line"># loc图例的位置，’loc’参数有多种，’best’表示自动分配最佳位置</span><br></pre></td></tr></table></figure></p>
+<h3 id="作图"><a href="#作图" class="headerlink" title="作图"></a>作图</h3><ul>
+<li><p>柱状图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">n = 12</span><br><span class="line">X = np.arange(n)</span><br><span class="line">Y1 = (1 - X / float(n)) * np.random.uniform(0.5, 1.0, n)</span><br><span class="line">Y2 = (1 - X / float(n)) * np.random.uniform(0.5, 1.0, n)</span><br><span class="line">plt.bar(X, +Y1)</span><br><span class="line">plt.bar(X, -Y2)</span><br><span class="line">plt.xlim(-.5, n)</span><br><span class="line">plt.xticks(())</span><br><span class="line">plt.ylim(-1.25, 1.25)</span><br><span class="line">plt.yticks(())</span><br><span class="line">#添加颜色</span><br><span class="line">plt.bar(X, +Y1, facecolor=&apos;#9999ff&apos;, edgecolor=&apos;white&apos;)</span><br><span class="line">plt.bar(X, -Y2, facecolor=&apos;#ff9999&apos;, edgecolor=&apos;white&apos;)</span><br><span class="line"></span><br><span class="line"># 添加数字</span><br><span class="line">for x, y in zip(X, Y2):</span><br><span class="line">    plt.text(x + 0.4, -y - 0.05, &apos;%.2f&apos; % y, ha=&apos;center&apos;, va=&apos;top&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>散点图</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(X, Y, s=75, c=T, alpha=.5)</span><br><span class="line">#输入X和Y作为location，size=75，颜色为T，color map用默认值，</span><br><span class="line">透明度alpha 为 50%。 x轴显示范围定位(-1.5，1.5)，</span><br><span class="line">并用xtick()函数来隐藏x坐标轴，y轴同理。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>填充颜色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([0.313660827978, 0.365348418405, 0.423733120134,</span><br><span class="line">              0.365348418405, 0.439599930621, 0.525083754405,</span><br><span class="line">              0.423733120134, 0.525083754405, 0.651536351379]).reshape(3,3)</span><br><span class="line">plt.imshow(a, interpolation=&apos;nearest&apos;, cmap=&apos;bone&apos;, origin=&apos;lower&apos;)</span><br><span class="line">#按照a数组填充颜色</span><br><span class="line">#出图方式，多种参数值可选</span><br><span class="line">plt.colorbar(shrink=.92)  #添加颜色备注条</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3D图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from mpl_toolkits.mplot3d import Axes3D  #额外添加这个模块</span><br><span class="line">fig = plt.figure() #创建窗口</span><br><span class="line">ax = Axes3D(fig) #添加3D坐标轴</span><br><span class="line"></span><br><span class="line">X = np.arange(-4, 4, 0.25)</span><br><span class="line">Y = np.arange(-4, 4, 0.25)</span><br><span class="line">X, Y = np.meshgrid(X, Y)    # x-y 平面的网格</span><br><span class="line">R = np.sqrt(X ** 2 + Y ** 2)</span><br><span class="line">Z = np.sin(R)</span><br><span class="line">x.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=plt.get_cmap(&apos;rainbow&apos;))</span><br><span class="line">#做出一个三维曲面，并将一个 colormap rainbow 填充颜色，其中，rstride 和 cstride 分别代表 row 和 column 的跨度。</span><br><span class="line">ax.contourf(X, Y, Z, zdir=&apos;z&apos;, offset=-2, cmap=plt.get_cmap(&apos;rainbow&apos;))</span><br><span class="line">#添加等高线，即在x/y轴上的投影</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多图显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.subplot(a,b,c) #把figure分成a行b列，图画在第c个格，可以不要逗号</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>次坐标轴<br>获取figure默认的坐标系 ax1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fig, ax1 = plt.subplots()</span><br><span class="line">ax2 = ax1.twinx()   #对ax1调用twinx()方法，生成如同镜面效果后的ax2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>参考：<br><a href="https://morvanzhou.github.io/tutorials/data-manipulation/plt/" target="_blank" rel="noopener">莫烦Python</a><br><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot" target="_blank" rel="noopener">Pyplot API</a></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月22日 21:33</p>
+        <p>原始链接： <a class="post-url" href="/2019/01/22/数据可视化之Matplotlib/" title="数据可视化之Matplotlib">http://yoursite.com/2019/01/22/数据可视化之Matplotlib/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="Halo Wong">
+                Halo Wong
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/22/数据可视化之Matplotlib/&title=《数据可视化之Matplotlib》 — null&pic=https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548173981279&di=c36cb7da06b630f9d1f02cdd0b203aa6&imgtype=jpg&src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D1143365585%2C3638918602%26fm%3D214%26gp%3D0.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/22/数据可视化之Matplotlib/&title=《数据可视化之Matplotlib》 — null&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/01/22/数据可视化之Matplotlib/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据可视化之Matplotlib》 — null&url=http://yoursite.com/2019/01/22/数据可视化之Matplotlib/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/01/22/数据可视化之Matplotlib/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/01/22/数据可视化之Matplotlib/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/Python/" class="color2">Python</a>
+      
+    <a href="/tags/数据科学/" class="color5">数据科学</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基础知识"><span class="post-toc-text">基础知识</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作图"><span class="post-toc-text">作图</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/17/Pandas入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Pandas入门</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Halo Wong<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/实用技术/">实用技术</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/数据科学/" style="font-size: 20px;">数据科学</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/博客搭建/" style="font-size: 10px;">博客搭建</a> <a href="/tags/数据科学/" style="font-size: 20px;">数据科学</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
