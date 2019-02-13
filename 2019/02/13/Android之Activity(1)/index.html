@@ -3,25 +3,32 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>用Hexo在github上搭建个人博客 | </title>
+  <title>Android之Activity(1) | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="MinHow,MinHow's Blog">
   
-  <meta name="description" content="1.（这一步可以不做）下载node.js（msn版），全选安装，已经加到path了，还自带了npm，参考博客园的一篇文章 ，把npm下载的默认文件夹位置修改了。在nodejs文件夹下新建【node_global】及【node_cache】两个文件夹，创建完两 个空文件夹之后，打开cmd命令窗口，输入下边的代码，把路径替换成你建的两个文件夹路径 1234npm config set prefix &amp;">
-<meta name="keywords" content="博客搭建">
+  <meta name="description" content="Activity跳转Android开发基础之了解AndroidManifest.xml清单文件显示意图一般用于应用内组件跳转。隐式意图一般用于应用之间跳转。Android开发基础之通过隐式意图来实现界面的跳转应用间显隐式跳转 数据传输intent.putExtra(,)存储一个int值intent.getIntExtra(xxx,-1)取出一个int值，没取到默认返回-1对象传递实现Parceb">
+<meta name="keywords" content="Android,Activity">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用Hexo在github上搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2019/01/14/用hexo在github上搭建个人博客/index.html">
+<meta property="og:title" content="Android之Activity(1)">
+<meta property="og:url" content="http://yoursite.com/2019/02/13/Android之Activity(1)/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="1.（这一步可以不做）下载node.js（msn版），全选安装，已经加到path了，还自带了npm，参考博客园的一篇文章 ，把npm下载的默认文件夹位置修改了。在nodejs文件夹下新建【node_global】及【node_cache】两个文件夹，创建完两 个空文件夹之后，打开cmd命令窗口，输入下边的代码，把路径替换成你建的两个文件夹路径 1234npm config set prefix &amp;">
+<meta property="og:description" content="Activity跳转Android开发基础之了解AndroidManifest.xml清单文件显示意图一般用于应用内组件跳转。隐式意图一般用于应用之间跳转。Android开发基础之通过隐式意图来实现界面的跳转应用间显隐式跳转 数据传输intent.putExtra(,)存储一个int值intent.getIntExtra(xxx,-1)取出一个int值，没取到默认返回-1对象传递实现Parceb">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190114103327260.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-01-14T02:54:37.417Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/mdiligent/image/master/x021.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/mdiligent/image/master/x014.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/mdiligent/image/master/x015.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/mdiligent/image/master/x016.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/mdiligent/image/master/x017.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/mdiligent/image/master/x018.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/mdiligent/image/master/x019.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/mdiligent/image/master/x020.png">
+<meta property="og:updated_time" content="2019-02-13T05:40:09.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用Hexo在github上搭建个人博客">
-<meta name="twitter:description" content="1.（这一步可以不做）下载node.js（msn版），全选安装，已经加到path了，还自带了npm，参考博客园的一篇文章 ，把npm下载的默认文件夹位置修改了。在nodejs文件夹下新建【node_global】及【node_cache】两个文件夹，创建完两 个空文件夹之后，打开cmd命令窗口，输入下边的代码，把路径替换成你建的两个文件夹路径 1234npm config set prefix &amp;">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190114103327260.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="Android之Activity(1)">
+<meta name="twitter:description" content="Activity跳转Android开发基础之了解AndroidManifest.xml清单文件显示意图一般用于应用内组件跳转。隐式意图一般用于应用之间跳转。Android开发基础之通过隐式意图来实现界面的跳转应用间显隐式跳转 数据传输intent.putExtra(,)存储一个int值intent.getIntExtra(xxx,-1)取出一个int值，没取到默认返回-1对象传递实现Parceb">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/mdiligent/image/master/x021.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -112,14 +119,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-用hexo在github上搭建个人博客" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-Android之Activity(1)" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      用Hexo在github上搭建个人博客
+      Android之Activity(1)
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -127,12 +134,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/实用技术/">实用技术</a>
+                      <a href="/categories/自用笔记/">自用笔记</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-01-14
+          <i class="fa fa-calendar"></i>  2019-02-13
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -148,49 +155,16 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p><img src="https://img-blog.csdnimg.cn/20190114103327260.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>1.（这一步可以不做）下载node.js（msn版），全选安装，已经加到path了，还自带了npm，参考博客园的一篇文章</p>
-<p>，把npm下载的默认文件夹位置修改了。在nodejs文件夹下新建【node_global】及【node_cache】两个文件夹，创建完两</p>
-<p>个空文件夹之后，打开cmd命令窗口，输入下边的代码，把路径替换成你建的两个文件夹路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix </span><br><span class="line"></span><br><span class="line">&quot;D:\Develop\nodejs\node_global&quot;</span><br><span class="line">npm config set cache &quot;D:\Develop\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
-<p>修改环境变量在【系统变</p>
-<p>量】下新建【NODE_PATH】，输入【D:\Develop\nodejs\node_global\node_modules】，将【用户变量】下的【Path】修改</p>
-<p>为【D:\Develop\nodejs\node_global】路径同样是你自己的路径。</p>
-<p>   2.可能在安装hexo等的时候会经常卡住，推荐换成</p>
-<p>淘宝的源，打开cmd输入</p>
-<p>npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>配置后可通过下面方式来验证是否</p>
-<p>成功 npm config get registry 或npm info express。</p>
-<p>3.在node.js目录下安装hexo，有博主推荐hexo也有hexo-cli，两</p>
-<p>者的区别可以自行百度哦，没有配置环境变量导致不能使用hexo命令行。我自己刚开始下的hexo-cli配置环境变量老是出</p>
-<p>错反正。进入NodeJS的安装目录，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p> 可能需要添加环境变量，根据你的文件位置，类似C:</p>
-<p>\ProgramFiles\nodejs\node_global\node_modules\hexo\node_modules.bin主要是后边的node_modules.bin要一致。</p>
-<p>4.</p>
-<p>新建一个文件夹用来存放博客，在这个文件夹下打开命令行，依次输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>如果</p>
-<p>hexo s有错误，可能是没安装server，可以npm install hexo-server –save。</p>
-<p>访问<a href="http://localhost:4000即可看到你的" target="_blank" rel="noopener">http://localhost:4000即可看到你的</a></p>
-<p>博客。</p>
-<p>5.在github新建一个存储库，名称一定要为username.github.io，进入settings选择githubpages，要先选择主题才</p>
-<p>能启用githubpages。更换主题，<a href="https://hexo.io/themes/在上边选好主题，照着做克隆下来，根据教程修改thems里的" target="_blank" rel="noopener">https://hexo.io/themes/在上边选好主题，照着做克隆下来，根据教程修改thems里的</a></p>
-<p>config文件好了。</p>
-<p>不管配置哪个config文件都要有键值对之间冒号后都要有空格。站点config.yml文件要添加</p>
-<p>注意：好像</p>
-<p>是先在文章里贴标签，才在分类里有标签，而不是先设置标签供选择。</p>
-<p>参考博客：<br><a href="https://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html" target="_blank" rel="noopener">https://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html</a></p>
-<p><a href="https://blog.csdn.net/edxuanlen/article/details/79154116" target="_blank" rel="noopener">https://blog.csdn.net/edxuanlen/article/details/79154116</a></p>
-<p><a href="https://www.cnblogs.com/liuxianan/p/build-blog-" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-</a></p>
-<p>website-by-hexo-github.html</p>
-<p><a href="https://blog.csdn.net/tonydandelion2014/article/details/61615898" target="_blank" rel="noopener">https://blog.csdn.net/tonydandelion2014/article/details/61615898</a></p>
-<p><a href="https://www.cnblogs.com/jackyroc/p/7681938.html" target="_blank" rel="noopener">https://www.cnblogs.com/jackyroc/p/7681938.html</a></p>
-<p><a href="https://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html" target="_blank" rel="noopener">https://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html</a></p>
-<p><a href="https://www.cnblogs.com/trista222/p/8017300.html" target="_blank" rel="noopener">https://www.cnblogs.com/trista222/p/8017300.html</a></p>
+            <ul>
+<li>Activity跳转<br><a href="https://blog.sunofbeaches.com/archives/1017" target="_blank" rel="noopener">Android开发基础之了解AndroidManifest.xml清单文件</a><br><img src="https://raw.githubusercontent.com/mdiligent/image/master/x021.png" alt="在这里插入图片描述"><br>显示意图一般用于应用内组件跳转。<br><img src="https://raw.githubusercontent.com/mdiligent/image/master/x014.png" alt="在这里插入图片描述"><br><img src="https://raw.githubusercontent.com/mdiligent/image/master/x015.png" alt="在这里插入图片描述">隐式意图一般用于应用之间跳转。<br><a href="https://blog.sunofbeaches.com/archives/1046" target="_blank" rel="noopener">Android开发基础之通过隐式意图来实现界面的跳转</a><br><img src="https://raw.githubusercontent.com/mdiligent/image/master/x016.png" alt="在这里插入图片描述"><br><img src="https://raw.githubusercontent.com/mdiligent/image/master/x017.png" alt="在这里插入图片描述"><br>应用间显隐式跳转<br><img src="https://raw.githubusercontent.com/mdiligent/image/master/x018.png" alt="在这里插入图片描述"><br><img src="https://raw.githubusercontent.com/mdiligent/image/master/x019.png" alt="在这里插入图片描述"></li>
+<li>数据传输<br>intent.putExtra(,)存储一个int值<br>intent.getIntExtra(xxx,-1)取出一个int值，没取到默认返回-1<br>对象传递实现Parceble接口，里面要有set和get方法，要按顺序读取和写入·。<br><a href="https://blog.sunofbeaches.com/archives/1053" target="_blank" rel="noopener">Android开发基础之组件之间的数据传输</a></li>
+<li>实现打电话功能<br><img src="https://raw.githubusercontent.com/mdiligent/image/master/x020.png" alt="在这里插入图片描述"><br>记录自<a href="https://bbs.sunofbeaches.com/portal.php" target="_blank" rel="noopener">阳光沙滩</a></li>
+</ul>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年01月14日 10:54</p>
-        <p>原始链接： <a class="post-url" href="/2019/01/14/用hexo在github上搭建个人博客/" title="用Hexo在github上搭建个人博客">http://yoursite.com/2019/01/14/用hexo在github上搭建个人博客/</a></p>
+        <p>最后更新： 2019年02月13日 13:40</p>
+        <p>原始链接： <a class="post-url" href="/2019/02/13/Android之Activity(1)/" title="Android之Activity(1)">http://yoursite.com/2019/02/13/Android之Activity(1)/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="Halo Wong">
@@ -247,7 +221,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/01/14/用hexo在github上搭建个人博客/&title=《用Hexo在github上搭建个人博客》 — null&pic=http://www.33lc.com/article/UploadPic/2012-8/201282913361430961.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/02/13/Android之Activity(1)/&title=《Android之Activity(1)》 — null&pic=https://raw.githubusercontent.com/mdiligent/image/master/a004.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -257,22 +231,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/01/14/用hexo在github上搭建个人博客/&title=《用Hexo在github上搭建个人博客》 — null&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/02/13/Android之Activity(1)/&title=《Android之Activity(1)》 — null&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/01/14/用hexo在github上搭建个人博客/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/02/13/Android之Activity(1)/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《用Hexo在github上搭建个人博客》 — null&url=http://yoursite.com/2019/01/14/用hexo在github上搭建个人博客/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android之Activity(1)》 — null&url=http://yoursite.com/2019/02/13/Android之Activity(1)/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/01/14/用hexo在github上搭建个人博客/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/02/13/Android之Activity(1)/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -282,7 +256,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/01/14/用hexo在github上搭建个人博客/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/02/13/Android之Activity(1)/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -294,7 +268,9 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/博客搭建/" class="color5">博客搭建</a>
+    <a href="/tags/Android/" class="color3">Android</a>
+      
+    <a href="/tags/Activity/" class="color4">Activity</a>
       
   </li>
 
@@ -308,19 +284,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/01/15/Git基本操作/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          Git基本操作
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/01/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Hello World</span>
+    <a href="/2019/02/10/Android UI布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Android UI布局</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
