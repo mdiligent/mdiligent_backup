@@ -17,7 +17,7 @@
 <meta property="og:description" content="1.（这一步可以不做）下载node.js（msn版），全选安装，已经加到path了，还自带了npm，参考博客园的一篇文章 ，把npm下载的默认文件夹位置修改了。在nodejs文件夹下新建【node_global】及【node_cache】两个文件夹，创建完两 个空文件夹之后，打开cmd命令窗口，输入下边的代码，把路径替换成你建的两个文件夹路径 1234npm config set prefix &amp;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190114103327260.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21iZXN0Ng==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-01-14T02:54:37.417Z">
+<meta property="og:updated_time" content="2019-03-17T01:24:32.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Hexo在github上搭建个人博客">
 <meta name="twitter:description" content="1.（这一步可以不做）下载node.js（msn版），全选安装，已经加到path了，还自带了npm，参考博客园的一篇文章 ，把npm下载的默认文件夹位置修改了。在nodejs文件夹下新建【node_global】及【node_cache】两个文件夹，创建完两 个空文件夹之后，打开cmd命令窗口，输入下边的代码，把路径替换成你建的两个文件夹路径 1234npm config set prefix &amp;">
@@ -163,25 +163,20 @@
 <p>者的区别可以自行百度哦，没有配置环境变量导致不能使用hexo命令行。我自己刚开始下的hexo-cli配置环境变量老是出</p>
 <p>错反正。进入NodeJS的安装目录，输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p> 可能需要添加环境变量，根据你的文件位置，类似C:</p>
-<p>\ProgramFiles\nodejs\node_global\node_modules\hexo\node_modules.bin主要是后边的node_modules.bin要一致。</p>
+<p> 可能需要添加环境变量，根据你的文件位置，类似C:\ProgramFiles\nodejs\node_global\node_modules\hexo\node_modules.bin主要是后边的node_modules.bin要一致。</p>
 <p>4.</p>
 <p>新建一个文件夹用来存放博客，在这个文件夹下打开命令行，依次输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p>如果</p>
 <p>hexo s有错误，可能是没安装server，可以npm install hexo-server –save。</p>
-<p>访问<a href="http://localhost:4000即可看到你的" target="_blank" rel="noopener">http://localhost:4000即可看到你的</a></p>
-<p>博客。</p>
+<p>访问<a href="http://localhost:4000即可看到你的博客。" target="_blank" rel="noopener">http://localhost:4000即可看到你的博客。</a></p>
 <p>5.在github新建一个存储库，名称一定要为username.github.io，进入settings选择githubpages，要先选择主题才</p>
-<p>能启用githubpages。更换主题，<a href="https://hexo.io/themes/在上边选好主题，照着做克隆下来，根据教程修改thems里的" target="_blank" rel="noopener">https://hexo.io/themes/在上边选好主题，照着做克隆下来，根据教程修改thems里的</a></p>
-<p>config文件好了。</p>
-<p>不管配置哪个config文件都要有键值对之间冒号后都要有空格。站点config.yml文件要添加</p>
-<p>注意：好像</p>
-<p>是先在文章里贴标签，才在分类里有标签，而不是先设置标签供选择。</p>
+<p>能启用githubpages。更换主题，<a href="https://hexo.io/themes/在上边选好主题，照着做克隆下来，根据教程修改thems里的config文件好了。" target="_blank" rel="noopener">https://hexo.io/themes/在上边选好主题，照着做克隆下来，根据教程修改thems里的config文件好了。</a></p>
+<p>不管配置哪个config文件都要有键值对之间冒号后都要有空格。站点config.yml文件要添加。</p>
+<p>注意：好像是先在文章里贴标签，才在分类里有标签，而不是先设置标签供选择。</p>
 <p>参考博客：<br><a href="https://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html" target="_blank" rel="noopener">https://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html</a></p>
 <p><a href="https://blog.csdn.net/edxuanlen/article/details/79154116" target="_blank" rel="noopener">https://blog.csdn.net/edxuanlen/article/details/79154116</a></p>
-<p><a href="https://www.cnblogs.com/liuxianan/p/build-blog-" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-</a></p>
-<p>website-by-hexo-github.html</p>
+<p><a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a></p>
 <p><a href="https://blog.csdn.net/tonydandelion2014/article/details/61615898" target="_blank" rel="noopener">https://blog.csdn.net/tonydandelion2014/article/details/61615898</a></p>
 <p><a href="https://www.cnblogs.com/jackyroc/p/7681938.html" target="_blank" rel="noopener">https://www.cnblogs.com/jackyroc/p/7681938.html</a></p>
 <p><a href="https://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html" target="_blank" rel="noopener">https://www.cnblogs.com/dantefung/p/d8c48ba8030bcab7cfc364d423186fee.html</a></p>
@@ -189,7 +184,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年01月14日 10:54</p>
+        <p>最后更新： 2019年03月17日 09:24</p>
         <p>原始链接： <a class="post-url" href="/2019/01/14/用hexo在github上搭建个人博客/" title="用Hexo在github上搭建个人博客">http://yoursite.com/2019/01/14/用hexo在github上搭建个人博客/</a></p>
         <footer>
             <a href="http://yoursite.com">
